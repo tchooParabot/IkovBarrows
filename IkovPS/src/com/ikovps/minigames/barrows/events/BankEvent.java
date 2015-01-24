@@ -111,7 +111,7 @@ public class BankEvent implements Strategy
         
         if(BarrowLibrary.somethingWrong)//banking due to low health
         {
-        	Menu.sendAction(75, BarrowLibrary.SHARK - 1, 2, 5382);//withdraw 5 shark
+        	Menu.sendAction(78, BarrowLibrary.SHARK - 1, 2, 5382);//withdraw 5 shark
         	Mouse.getInstance().click(xMark);
 	        Time.sleep(800);
         }
