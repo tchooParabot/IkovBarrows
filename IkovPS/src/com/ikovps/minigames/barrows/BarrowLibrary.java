@@ -71,6 +71,7 @@ public class BarrowLibrary
 	
 	
 	public static final Zone BANK_ZONE   = new Zone(new Tile(3087, 3503), new Tile(3099, 3487)),
+							 BARROW_ZONE = new Zone(new Tile(3548, 3305), new Tile(3582, 3270)),
 					   		 START_ZONE  = new Zone(new Tile(3562, 3310), new Tile(3567, 3305)),
 					   		 VERAC_ZONE  = new Zone(new Tile(3554, 3300), new Tile(3559, 3296)),
 					   		 AHRIM_ZONE  = new Zone(new Tile(3562, 3291), new Tile(3567, 3286)),

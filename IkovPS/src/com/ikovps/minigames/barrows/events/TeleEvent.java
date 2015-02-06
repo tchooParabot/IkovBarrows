@@ -47,6 +47,11 @@ public class TeleEvent implements Strategy{
 	            BarrowLibrary.autoCastOn = true;
 	    	}
 			
+			if(Loader.getClient().getOpenInterfaceId() == 5292)
+         	{
+        		Mouse.getInstance().click(new Point(488, 30));
+        		Time.sleep(800);
+         	}
 			
 			Mouse.getInstance().click(miniTp);
 			

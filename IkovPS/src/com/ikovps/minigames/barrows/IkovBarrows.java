@@ -38,7 +38,7 @@ import com.ikovps.minigames.barrows.events.VeracEvent;
 
 
 @ScriptManifest(author = "Tchoo", category = Category.OTHER, description = "Does barrows minigame on Ikov, supports prayer renewals and sharks",
-name = "IkovBarrows", servers = { "Ikov" }, version = 1.13)
+name = "IkovBarrows", servers = { "Ikov" }, version = 1.11)
 
 public class IkovBarrows extends Script implements Paintable, MessageListener
 {

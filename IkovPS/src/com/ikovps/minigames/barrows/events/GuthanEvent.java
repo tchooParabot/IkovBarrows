@@ -176,7 +176,7 @@ public class GuthanEvent implements Strategy
                 SceneObject guthanStairs = SceneObjects.getClosest(BarrowLibrary.GUTHAN_STAIRS);	    	               
                 Time.sleep(1500);
                 
-                while(!BarrowLibrary.GUTHAN_ZONE.inTheZone() && !BarrowLibrary.LOOT_ZONE.inTheZone())
+                while(!BarrowLibrary.BARROW_ZONE.inTheZone() && !BarrowLibrary.LOOT_ZONE.inTheZone())
                 {
                 	try{
                         guthanStairs.interact(0);
@@ -191,9 +191,9 @@ public class GuthanEvent implements Strategy
                 	Time.sleep(new SleepCondition() {
         				@Override
         				public boolean isValid() {
-        					return BarrowLibrary.GUTHAN_ZONE.inTheZone();
+        					return BarrowLibrary.BARROW_ZONE.inTheZone();
         				}
-        			}, 1500);	
+        			}, 2500);
                 	
                 	if(BarrowLibrary.falseLoot)
                 	{

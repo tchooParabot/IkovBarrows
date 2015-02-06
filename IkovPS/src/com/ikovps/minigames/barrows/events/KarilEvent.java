@@ -140,7 +140,7 @@ public class KarilEvent implements Strategy
             		{
     	                SceneObject karilStairs = SceneObjects.getClosest(BarrowLibrary.KARIL_STAIRS);
     	                
-    	                while(!BarrowLibrary.KARIL_ZONE.inTheZone() && BarrowMethods.isLoggedIn())
+    	                while(!BarrowLibrary.BARROW_ZONE.inTheZone() && BarrowMethods.isLoggedIn())
     	                {
     	                	try{
     	                        karilStairs.interact(0);
@@ -152,12 +152,11 @@ public class KarilEvent implements Strategy
 	    	    	            	break;
 	    	    	            }
     	                	Time.sleep(new SleepCondition() {
-                				@Override
-                				public boolean isValid() {
-                					return BarrowLibrary.KARIL_ZONE.inTheZone();
-                				}
-
-                			}, 1500);	
+    	        				@Override
+    	        				public boolean isValid() {
+    	        					return BarrowLibrary.BARROW_ZONE.inTheZone();
+    	        				}
+    	        			}, 2500);
     	                }
             		}
             		break;

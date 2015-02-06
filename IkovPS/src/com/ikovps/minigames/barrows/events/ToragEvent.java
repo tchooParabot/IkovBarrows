@@ -181,7 +181,7 @@ public class ToragEvent implements Strategy
             	BarrowLibrary.status = "Torag Killed, leaving tomb";
                 SceneObject toragStairs = SceneObjects.getClosest(BarrowLibrary.TORAG_STAIRS);	    	               
                 Time.sleep(1500);
-                while(!BarrowLibrary.TORAG_ZONE.inTheZone() && !BarrowLibrary.LOOT_ZONE.inTheZone())
+                while(!BarrowLibrary.BARROW_ZONE.inTheZone() && !BarrowLibrary.LOOT_ZONE.inTheZone())
                 {
                 	try{
                         toragStairs.interact(0);
@@ -196,9 +196,9 @@ public class ToragEvent implements Strategy
                 	Time.sleep(new SleepCondition() {
         				@Override
         				public boolean isValid() {
-        					return BarrowLibrary.TORAG_ZONE.inTheZone();
+        					return BarrowLibrary.BARROW_ZONE.inTheZone();
         				}
-        			}, 1500);
+        			}, 2500);
                 	
                 	if(BarrowLibrary.falseLoot){
                 		BarrowLibrary.status = "Teleported too early, restarting run";

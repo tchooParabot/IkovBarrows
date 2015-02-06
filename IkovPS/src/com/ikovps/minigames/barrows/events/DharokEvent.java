@@ -179,7 +179,7 @@ public class DharokEvent implements Strategy
                 SceneObject dharokStairs = SceneObjects.getClosest(BarrowLibrary.DHAROK_STAIRS);	    	               
                 Time.sleep(1500);
                 
-                while(!BarrowLibrary.DHAROK_ZONE.inTheZone() && !BarrowLibrary.LOOT_ZONE.inTheZone())
+                while(!BarrowLibrary.BARROW_ZONE.inTheZone() && !BarrowLibrary.LOOT_ZONE.inTheZone())
                 {
                 	try{
                         dharokStairs.interact(0);
@@ -194,9 +194,9 @@ public class DharokEvent implements Strategy
                 	Time.sleep(new SleepCondition() {
         				@Override
         				public boolean isValid() {
-        					return BarrowLibrary.DHAROK_ZONE.inTheZone();
+        					return BarrowLibrary.BARROW_ZONE.inTheZone();
         				}
-        			}, 1500);
+        			}, 2500);
                 	
                 	if(BarrowLibrary.falseLoot)
                 	{

@@ -24,7 +24,7 @@ public class BankEvent implements Strategy
 	{							
         if (BarrowMethods.isLoggedIn() && ((Inventory.getCount() > 25 || Inventory.getCount(BarrowLibrary.SPADE) != 1 || 
         		Inventory.getCount(BarrowLibrary.RENEWALS) < 1) || Inventory.getCount(BarrowLibrary.SHARK) < 1 && 
-        		(BarrowLibrary.START_ZONE.inTheZone()) || BarrowLibrary.BANK_ZONE.inTheZone()))
+        		(BarrowLibrary.BARROW_ZONE.inTheZone()) || BarrowLibrary.BANK_ZONE.inTheZone()))
         {
      	   return true;
         }
@@ -112,6 +112,7 @@ public class BankEvent implements Strategy
         if(BarrowLibrary.somethingWrong)//banking due to low health
         {
         	Menu.sendAction(78, BarrowLibrary.SHARK - 1, 2, 5382);//withdraw 5 shark
+        	Time.sleep(500);
         	Mouse.getInstance().click(xMark);
 	        Time.sleep(800);
         }
@@ -128,7 +129,7 @@ public class BankEvent implements Strategy
         if(BarrowLibrary.somethingWrong)
         {
         	while(Inventory.getCount(BarrowLibrary.SHARK) > 2)
-        	{
+        	{   
         		BarrowMethods.eat();
         		Time.sleep(new SleepCondition()
                 {

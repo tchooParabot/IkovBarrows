@@ -178,7 +178,7 @@ public class VeracEvent implements Strategy
                 SceneObject j = SceneObjects.getClosest(BarrowLibrary.VERAC_STAIRS);	    	               
                 Time.sleep(1500);
                 
-                while(!BarrowLibrary.VERAC_ZONE.inTheZone() && !BarrowLibrary.LOOT_ZONE.inTheZone())
+                while(!BarrowLibrary.BARROW_ZONE.inTheZone() && !BarrowLibrary.LOOT_ZONE.inTheZone())
                 {
                 	try{
                         j.interact(0);
@@ -193,9 +193,9 @@ public class VeracEvent implements Strategy
                 	Time.sleep(new SleepCondition() {
         				@Override
         				public boolean isValid() {
-        					return BarrowLibrary.VERAC_ZONE.inTheZone();
+        					return BarrowLibrary.BARROW_ZONE.inTheZone();
         				}
-        			}, 1500);
+        			}, 2500);
                 	if(BarrowLibrary.falseLoot)
                 	{
                 		BarrowLibrary.status = "Teleported too early, restarting run";

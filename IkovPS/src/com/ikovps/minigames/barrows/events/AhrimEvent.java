@@ -177,7 +177,7 @@ public class AhrimEvent implements Strategy
             	BarrowLibrary.status = "Ahrim Killed, Leaving tomb";
                 SceneObject ahrimStairs = SceneObjects.getClosest(BarrowLibrary.AHRIM_STAIRS);	    	               
                 Time.sleep(1500);
-                while(!BarrowLibrary.AHRIM_ZONE.inTheZone() && !BarrowLibrary.LOOT_ZONE.inTheZone())
+                while(!BarrowLibrary.BARROW_ZONE.inTheZone() && !BarrowLibrary.LOOT_ZONE.inTheZone())
                 {
                 	try{
                         ahrimStairs.interact(0);
@@ -189,7 +189,13 @@ public class AhrimEvent implements Strategy
                         	break;
                         }
                 		                	
-                	Time.sleep(2500);
+                	Time.sleep(new SleepCondition() {
+        				@Override
+        				public boolean isValid() {
+        					return BarrowLibrary.BARROW_ZONE.inTheZone();
+        				}
+        			}, 2500);
+                	
                 	if(BarrowLibrary.falseLoot)
                 	{
                 		BarrowLibrary.status = "Teleported too early, restarting run";
